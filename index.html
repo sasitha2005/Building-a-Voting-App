@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Voting App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/4.8.0/firebaseui.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.8.0/firebaseui.css" />
+</head>
+<body>
+  <header>
+    <h1>Voting App</h1>
+    <div id="firebaseui-auth-container"></div>
+    <div id="user-info" style="display: none;">
+      <button id="logout">Logout</button>
+    </div>
+  </header>
+  <main>
+    <section id="polls">
+      <!-- Polls will be dynamically inserted here -->
+    </section>
+    <section id="new-poll">
+      <h2>Create a New Poll</h2>
+      <form id="poll-form">
+        <label for="poll-question">Question:</label>
+        <input type="text" id="poll-question" name="poll-question" required>
+        <label for="poll-options">Options (comma-separated):</label>
+        <input type="text" id="poll-options" name="poll-options" required>
+        <button type="submit">Create Poll</button>
+      </form>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
